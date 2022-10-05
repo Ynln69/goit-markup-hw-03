@@ -11,6 +11,8 @@ html {
   --boder-bg-color: #2f303a;
   --section-team-bg-color: #f5f4fa;
   --address-text-color: rgba(255, 255, 255, 0.6);
+  --border-color: #eeeeee;
+  --border-header-color: #ececec;
 }
 
 *,
@@ -52,15 +54,19 @@ img {
 
 .container {
   width: 1200px;
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
   padding: 0 15px;
 }
 
 .section {
+  width: 100%;
   padding: 94px 0;
 }
 /* Стилі для шапки сторінок*/
+.header {
+  border: 1px solid var(--border-header-color);
+}
 .logo,
 .logo-dark {
   font-family: "Raleway";
@@ -74,6 +80,7 @@ img {
 .logo-dark {
   color: var(--logo-color);
 }
+
 .nav-link {
   font-weight: 500;
   line-height: 1.14;
@@ -100,22 +107,30 @@ img {
 }
 /* Стилі для hero секції */
 .hero {
+  width: 100%;
   background-color: var(--boder-bg-color);
+  text-align: center;
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
 .hero-title {
+  max-width: 696px;
+  margin-right: auto;
+  margin-bottom: 30px;
+  margin-left: auto;
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  width: 696px;
-  margin: 30px 0;
-  text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--main-light-color);
 }
 .btn {
+  display: inline-block;
   font-weight: 700;
   font-size: 16px;
+  padding: 10px 32px;
+  min-width: 216px;
   line-height: 1.87;
   letter-spacing: 0.06em;
   color: var(--main-light-color);
@@ -142,6 +157,16 @@ img {
   clip-path: inset(50%);
   margin: -1px;
 }
+
+.feature-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.feature-item {
+  width: 270px;
+}
 .feature-title {
   font-size: 14px;
   line-height: 1.14;
@@ -164,13 +189,28 @@ img {
   letter-spacing: 0.03em;
   color: var(--secondory-font-color);
 }
+
+.about-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
 /* Стилізація секції "Наша команда" */
 .team {
   background-color: var(--section-team-bg-color);
 }
 
+.team-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.team-item {
+  width: 270px;
+  text-align: center;
+}
 .team-title {
-  width: 129px;
   font-size: 16px;
   line-height: 1.18;
   margin-bottom: 10px;
@@ -179,8 +219,8 @@ img {
 }
 
 .team-box {
-  padding: 30px 70px;
   width: 270px;
+  padding: 30px 70px;
   background-color: var(--main-light-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -188,6 +228,7 @@ img {
 }
 /* Стилізація підвалу сторінок */
 .footer {
+  padding: 60px 0;
   background-color: var(--boder-bg-color);
 }
 .logo-light {
@@ -196,6 +237,7 @@ img {
   margin-bottom: 20px;
 }
 .address {
+  width: 231px;
   font-style: normal;
 }
 .address-link {
@@ -220,12 +262,20 @@ img {
 }
 /* Стилізація для сторінки портфоліо  */
 /* Основний контент\фільтр секція */
+.filter-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 8px;
+}
+
 .filter-button {
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
   letter-spacing: 0.03em;
+  padding: 6px 25px;
   text-align: center;
   color: var(--secondory-font-color);
   background: var(--section-team-bg-color);
@@ -241,7 +291,20 @@ img {
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
 }
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.card-box {
+  padding: 20px 24px;
+  width: 370px;
+  border: 1px solid var(--border-color);
+  background-color: var(--main-light-color);
+}
 .card-title {
+  margin-bottom: 4px;
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
