@@ -1,3 +1,6 @@
+html {
+  box-sizing: border-box;
+}
 :root {
   --main-light-color: #ffffff;
   --main-font-color: #757575;
@@ -9,8 +12,16 @@
   --section-team-bg-color: #f5f4fa;
   --address-text-color: rgba(255, 255, 255, 0.6);
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 /* Загальні стилі */
 body {
+  margin: 0;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   color: var(--main-font-color);
@@ -33,11 +44,21 @@ ul {
   margin: 0;
   padding: 0;
 }
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 
 .container {
   width: 1200px;
   margin-right: auto;
   margin-left: auto;
+  padding: 0 15px;
+}
+
+.section {
+  padding: 94px 0;
 }
 /* Стилі для шапки сторінок*/
 .logo,
@@ -85,6 +106,9 @@ ul {
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
+  width: 696px;
+  margin: 30px 0;
+  text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--main-light-color);
@@ -122,17 +146,21 @@ ul {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
+  margin-bottom: 26px;
   text-transform: uppercase;
   color: var(--secondory-font-color);
 }
 .feature-text {
   line-height: 1.71;
   letter-spacing: 0.03em;
+  width: 270px;
 }
 /* Стилізація секції "чим ми займаємось" */
 .title {
   font-size: 36px;
   line-height: 1.16;
+  text-align: center;
+  margin-bottom: 50px;
   letter-spacing: 0.03em;
   color: var(--secondory-font-color);
 }
@@ -140,31 +168,44 @@ ul {
 .team {
   background-color: var(--section-team-bg-color);
 }
+
 .team-title {
+  width: 129px;
   font-size: 16px;
   line-height: 1.18;
+  margin-bottom: 10px;
   letter-spacing: 0.03em;
   color: var(--secondory-font-color);
 }
+
 .team-box {
+  padding: 30px 70px;
+  width: 270px;
   background-color: var(--main-light-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 /* Стилізація підвалу сторінок */
 .footer {
   background-color: var(--boder-bg-color);
 }
 .logo-light {
+  display: inline-block;
   color: var(--main-light-color);
+  margin-bottom: 20px;
 }
 .address {
   font-style: normal;
 }
 .address-link {
   letter-spacing: 0.03em;
+  margin-bottom: 9px;
   line-height: 1.71;
   color: var(--main-light-color);
 }
 .address-contact {
+  margin-bottom: 9px;
   letter-spacing: 0.03em;
   line-height: 1.71;
   color: var(--address-text-color);
