@@ -13,6 +13,7 @@ html {
   --address-text-color: rgba(255, 255, 255, 0.6);
   --border-color: #eeeeee;
   --border-header-color: #ececec;
+  --shadow-btn-color: rgba(0, 0, 0, 0.15);
 }
 
 *,
@@ -26,6 +27,7 @@ body {
   margin: 0;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
+
   color: var(--main-font-color);
   background-color: var(--main-light-color);
 }
@@ -56,36 +58,59 @@ img {
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .section {
   width: 100%;
-  padding: 94px 0;
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 /* Стилі для шапки сторінок*/
 .header {
   border: 1px solid var(--border-header-color);
 }
+
+.nav-flex,
+.nav,
+.contact-list {
+  display: flex;
+  align-items: center;
+}
 .logo,
 .logo-dark {
   font-family: "Raleway";
   font-style: normal;
+
+  color: var(--accent-color);
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
   letter-spacing: 0.03em;
-  color: var(--accent-color);
 }
 .logo-dark {
   color: var(--logo-color);
 }
 
+.nav-list {
+  display: flex;
+  margin-left: 93px;
+}
+
+.nav-item + .nav-item {
+  padding-left: 50px;
+}
+
 .nav-link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  color: var(--secondory-font-color);
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  color: var(--secondory-font-color);
 }
 .nav-link.current {
   color: var(--accent-color);
@@ -95,11 +120,20 @@ img {
   color: var(--accent-color);
 }
 
+.contact-list {
+  display: flex;
+  margin-left: auto;
+}
+
+.contact-item + .contact-item {
+  padding-left: 50px;
+}
+
 .contact-link {
+  color: var(--main-font-color);
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  color: var(--main-font-color);
 }
 .contact-link:hover,
 .contact-link:focus {
@@ -108,42 +142,47 @@ img {
 /* Стилі для hero секції */
 .hero {
   width: 100%;
-  background-color: var(--boder-bg-color);
-  text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
+
+  background-color: var(--boder-bg-color);
+  text-align: center;
 }
 .hero-title {
   max-width: 696px;
   margin-right: auto;
   margin-bottom: 30px;
   margin-left: auto;
+
+  color: var(--main-light-color);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--main-light-color);
 }
 .btn {
   display: inline-block;
-  font-weight: 700;
-  font-size: 16px;
   padding: 10px 32px;
   min-width: 216px;
-  line-height: 1.87;
-  letter-spacing: 0.06em;
-  color: var(--main-light-color);
-  background: var(--accent-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 4px 4px var(--shadow-btn-color);
   border-radius: 4px;
   border: none;
   cursor: pointer;
+
+  color: var(--main-light-color);
+  background: var(--accent-color);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
 }
+
 .btn:hover,
 .btn:focus {
   background-color: var(--secondary-accent-color);
 }
+
 /* Стилізація Особливостей */
 .visually-hidden {
   position: absolute;
@@ -161,33 +200,39 @@ img {
 .feature-list {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+}
+.feature-item:not(:last-child) {
+  margin-right: 30px;
 }
 
 .feature-item {
   width: 270px;
 }
 .feature-title {
+  margin-bottom: 26px;
+
+  color: var(--secondory-font-color);
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
-  margin-bottom: 26px;
   text-transform: uppercase;
-  color: var(--secondory-font-color);
 }
+
 .feature-text {
+  width: 270px;
+
   line-height: 1.71;
   letter-spacing: 0.03em;
-  width: 270px;
 }
 /* Стилізація секції "чим ми займаємось" */
 .title {
+  margin-bottom: 50px;
+
+  color: var(--secondory-font-color);
   font-size: 36px;
   line-height: 1.16;
-  text-align: center;
-  margin-bottom: 50px;
   letter-spacing: 0.03em;
-  color: var(--secondory-font-color);
+  text-align: center;
 }
 
 .about-list {
@@ -208,54 +253,67 @@ img {
 
 .team-item {
   width: 270px;
+
   text-align: center;
 }
 .team-title {
+  margin-bottom: 10px;
+
+  color: var(--secondory-font-color);
   font-size: 16px;
   line-height: 1.18;
-  margin-bottom: 10px;
   letter-spacing: 0.03em;
-  color: var(--secondory-font-color);
 }
 
 .team-box {
   width: 270px;
-  padding: 30px 70px;
-  background-color: var(--main-light-color);
+  padding-top: 30px;
+  padding-bottom: 30px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+
+  background-color: var(--main-light-color);
 }
 /* Стилізація підвалу сторінок */
 .footer {
-  padding: 60px 0;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
   background-color: var(--boder-bg-color);
 }
 .logo-light {
   display: inline-block;
-  color: var(--main-light-color);
   margin-bottom: 20px;
+
+  color: var(--main-light-color);
 }
 .address {
   width: 231px;
+
   font-style: normal;
 }
+
 .address-link {
+  color: var(--main-light-color);
   letter-spacing: 0.03em;
   margin-bottom: 9px;
   line-height: 1.71;
-  color: var(--main-light-color);
 }
+
 .address-contact {
   margin-bottom: 9px;
+
+  color: var(--address-text-color);
   letter-spacing: 0.03em;
   line-height: 1.71;
-  color: var(--address-text-color);
 }
+
 .address-link:hover,
 .address-link:focus {
   color: var(--accent-color);
 }
+
 .address-contact:hover,
 .address-contact:focus {
   color: var(--accent-color);
@@ -270,26 +328,30 @@ img {
 }
 
 .filter-button {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+
+  color: var(--secondory-font-color);
+  background: var(--section-team-bg-color);
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
   letter-spacing: 0.03em;
-  padding: 6px 25px;
   text-align: center;
-  color: var(--secondory-font-color);
-  background: var(--section-team-bg-color);
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
 }
+
 .filter-button:hover,
 .filter-button:focus {
-  color: var(--main-light-color);
-  background-color: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
+
+  color: var(--main-light-color);
+  background-color: var(--accent-color);
 }
 
 .card-list {
@@ -297,23 +359,27 @@ img {
   flex-wrap: wrap;
   gap: 30px;
 }
+
 .card-box {
   padding: 20px 24px;
   width: 370px;
   border: 1px solid var(--border-color);
+
   background-color: var(--main-light-color);
 }
+
 .card-title {
   margin-bottom: 4px;
+
+  color: var(--secondory-font-color);
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
-  color: var(--secondory-font-color);
 }
 .card-text {
+  color: var(--main-font-color);
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.03em;
-  color: var(--main-font-color);
 }
