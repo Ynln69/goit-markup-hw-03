@@ -148,6 +148,7 @@ img {
   background-color: var(--boder-bg-color);
   text-align: center;
 }
+
 .hero-title {
   max-width: 696px;
   margin-right: auto;
@@ -161,6 +162,7 @@ img {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
+
 .btn {
   display: inline-block;
   padding: 10px 32px;
@@ -177,7 +179,6 @@ img {
   line-height: 1.87;
   letter-spacing: 0.06em;
 }
-
 .btn:hover,
 .btn:focus {
   background-color: var(--secondary-accent-color);
@@ -208,6 +209,7 @@ img {
 .feature-item {
   width: 270px;
 }
+
 .feature-title {
   margin-bottom: 26px;
 
@@ -250,7 +252,6 @@ img {
   flex-direction: row;
   justify-content: space-evenly;
 }
-
 .team-item {
   width: 270px;
 
@@ -264,7 +265,6 @@ img {
   line-height: 1.18;
   letter-spacing: 0.03em;
 }
-
 .team-box {
   width: 270px;
   padding-top: 30px;
@@ -282,16 +282,23 @@ img {
 
   background-color: var(--boder-bg-color);
 }
-.logo-light {
+
+.container .logo .logo-light {
   display: inline-block;
   margin-bottom: 20px;
-
+}
+.logo-light {
   color: var(--main-light-color);
 }
+
 .address {
   width: 231px;
 
   font-style: normal;
+}
+
+.address-item:not(:last-child) {
+  margin-bottom: 9px;
 }
 
 .address-link {
@@ -300,33 +307,28 @@ img {
   margin-bottom: 9px;
   line-height: 1.71;
 }
-
-.address-contact {
-  margin-bottom: 9px;
-
-  color: var(--address-text-color);
-  letter-spacing: 0.03em;
-  line-height: 1.71;
-}
-
 .address-link:hover,
 .address-link:focus {
   color: var(--accent-color);
 }
 
+.address-contact {
+  color: var(--address-text-color);
+  letter-spacing: 0.03em;
+  line-height: 1.71;
+}
 .address-contact:hover,
 .address-contact:focus {
   color: var(--accent-color);
 }
 /* Стилізація для сторінки портфоліо  */
 /* Основний контент\фільтр секція */
+
 .filter-list {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 8px;
 }
-
 .filter-button {
   padding-top: 6px;
   padding-bottom: 6px;
@@ -343,7 +345,6 @@ img {
   letter-spacing: 0.03em;
   text-align: center;
 }
-
 .filter-button:hover,
 .filter-button:focus {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
@@ -357,17 +358,25 @@ img {
 .card-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+}
+.card-item {
+  width: calc((100% - 60px) / 3);
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+.card-item:nth-child(3n) {
+  margin-right: 0;
+}
+.card-item:nth-last-child(-n + 3) {
+  margin-bottom: 0;
 }
 
 .card-box {
   padding: 20px 24px;
-  width: 370px;
   border: 1px solid var(--border-color);
 
   background-color: var(--main-light-color);
 }
-
 .card-title {
   margin-bottom: 4px;
 
